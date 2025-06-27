@@ -53,7 +53,7 @@ const CustomerManagement = () => {
       fetchCustomers();
       setIsModalOpen(false);
     } catch (error) {
-      message.error("Đã xảy ra lỗi!");
+        message.error("Đã xảy ra lỗi!", error);
     } finally {
       setIsLoading(false);
       form.resetFields();
@@ -70,7 +70,7 @@ const CustomerManagement = () => {
       setCustomers(customers.filter((customer) => customer.khachHangId !== id));
       form.resetFields();
     } catch (error) {
-      message.error("Đã xảy ra lỗi khi xoá khách hàng!");
+        message.error("Đã xảy ra lỗi khi xoá khách hàng!", error);
     } finally {
       setIsLoading(false);
     }
