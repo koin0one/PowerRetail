@@ -36,10 +36,25 @@ namespace PowerRetail.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<DeliveryStaff>> AddDeliveryStaff(DeliveryStaff deliveryStaff)
         {
-            deliveryStaff.NhanVienGiaoHangId = Guid.NewGuid();
-            _context.DeliveryStaffs.Add(deliveryStaff);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetDeliveryStaff), new { id = deliveryStaff.NhanVienGiaoHangId }, deliveryStaff);
+            try {
+                deliveryStaff.NhanVienGiaoHangId = Guid.NewGuid();
+                if (deliveryStaff.SoDienThoai.Length != 10)
+                {
+                    throw new Exception("So dien thoai phai la 10 chu so");
+                }
+
+                if (deliveryStaff.SoDonHangDaGiao < 0)
+                {
+                    throw new Exception("So don da giao khong duoc phep nho hon 0");
+                }
+                _context.DeliveryStaffs.Add(deliveryStaff);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction(nameof(GetDeliveryStaff), new { id = deliveryStaff.NhanVienGiaoHangId }, deliveryStaff);
+            } catch (Exception e)
+            {
+                throw new Exception("Error when add new staff: ", e);
+            }
+            
         }
 
         [HttpPut("{id}")]
@@ -54,6 +69,16 @@ namespace PowerRetail.Server.Controllers
             if (existingStaff == null)
             {
                 return NotFound(new { Message = "Delivery staff not found" });
+            }
+
+            if (deliveryStaff.SoDienThoai.Length != 10)
+            {
+                throw new Exception("So dien thoai phai la 10 chu so");
+            }
+
+            if (deliveryStaff.SoDonHangDaGiao < 0)
+            {
+                throw new Exception("So don da giao khong duoc phep nho hon 0");
             }
 
             existingStaff.HoTen = deliveryStaff.HoTen;

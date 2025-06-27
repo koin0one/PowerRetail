@@ -20,11 +20,18 @@ namespace PowerRetail.Server.Repositories
 
         public async Task<Product> CreateProductAsync(Product product)
         {
-            product.SanPhamId = Guid.NewGuid();
-            await _context.Set<Product>().AddAsync(product);
-            await _context.SaveChangesAsync();
+            try
+            {
+                product.SanPhamId = Guid.NewGuid();
+                await _context.Set<Product>().AddAsync(product);
+                await _context.SaveChangesAsync();
 
-            return product;
+                return product;
+            } catch (Exception e)
+            {
+                throw new Exception("Error when add new product: ", e);
+            }
+            
         }
 
         public async Task<IEnumerable<Product>> CreateProductsAsync(IEnumerable<Product> products)
