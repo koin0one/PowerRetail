@@ -1,0 +1,18 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    height: 100dvh;
+}
+
+.login-register {
+    max-width: 400px;
+    margin: auto auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-height: 456px;
+}

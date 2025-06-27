@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "powerretail.client", "powerretail.client\powerretail.client.esproj", "{9729F613-CD60-8F92-EC18-D34C702C5042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerRetail.Server", "PowerRetail.Server\PowerRetail.Server.csproj", "{05CD2AE6-45DB-465A-8BEF-3DC3A0F26938}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9729F613-CD60-8F92-EC18-D34C702C5042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9729F613-CD60-8F92-EC18-D34C702C5042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9729F613-CD60-8F92-EC18-D34C702C5042}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9729F613-CD60-8F92-EC18-D34C702C5042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9729F613-CD60-8F92-EC18-D34C702C5042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9729F613-CD60-8F92-EC18-D34C702C5042}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{05CD2AE6-45DB-465A-8BEF-3DC3A0F26938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CD2AE6-45DB-465A-8BEF-3DC3A0F26938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CD2AE6-45DB-465A-8BEF-3DC3A0F26938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CD2AE6-45DB-465A-8BEF-3DC3A0F26938}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BD00FEC-051B-4316-85C9-7EE73D77F99E}
+	EndGlobalSection
+EndGlobal

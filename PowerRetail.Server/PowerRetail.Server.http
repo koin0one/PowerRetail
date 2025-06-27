@@ -1,0 +1,6 @@
+@PowerRetail.Server_HostAddress = http://localhost:422211
+
+GET {{PowerRetail.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
